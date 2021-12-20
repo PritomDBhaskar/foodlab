@@ -5,9 +5,16 @@ const meals = () => {
     .then((data) => {
       data.meals.map((item) => {
         const colDiv = document.createElement("div");
-        colDiv.classList.add("col-md-4", "d-flex", "align-items-stretch");
+        colDiv.classList.add("col-md-4");
         const card = document.createElement("div");
-        card.classList.add("card", "m-4");
+        card.classList.add(
+          "card",
+          "m-4",
+          "border",
+          "border-primary",
+          "border-3",
+          "h-50"
+        );
         const cardBody = document.createElement("div");
         const cardTitle = document.createElement("h5");
         cardTitle.classList.add("card-title", "m-3", "text-center");
