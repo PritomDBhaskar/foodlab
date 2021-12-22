@@ -1,20 +1,27 @@
 const search = document.querySelector(".form-control");
 
 search.addEventListener("keyup", (e) => {
+  let searchText = search.value;
   if (e.keyCode === 13) {
-    let searchText = search.value;
+    itemRow.innerText = "";
     const data = fetch(
       `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchText}`
     )
       .then((data) => data.json())
       .then((data) => {
         data.meals.map((item) => {
-          itemRow.innerHTML = "";
           const colDiv = document.createElement("div");
-          colDiv.classList.add("col-md-4", "d-flex", "align-items-stretch");
+          colDiv.classList.add("col-md-4");
           const card = document.createElement("div");
-          card.classList.add("card", "m-4");
+          card.classList.add(
+            "card",
+            "m-4",
+            "border",
+            "border-primary",
+            "border-3"
+          );
           const cardBody = document.createElement("div");
+          cardBody.classList.add("overflow-hidden");
           const cardTitle = document.createElement("h5");
           cardTitle.classList.add("card-title", "m-3", "text-center");
           cardTitle.innerText = item.strMeal;

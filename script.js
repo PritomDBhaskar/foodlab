@@ -12,10 +12,10 @@ const meals = () => {
           "m-4",
           "border",
           "border-primary",
-          "border-3",
-          "h-50"
+          "border-3"
         );
         const cardBody = document.createElement("div");
+        cardBody.classList.add("overflow-hidden");
         const cardTitle = document.createElement("h5");
         cardTitle.classList.add("card-title", "m-3", "text-center");
         cardTitle.innerText = item.strMeal;
